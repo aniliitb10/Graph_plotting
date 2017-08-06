@@ -5,9 +5,10 @@ import math
 margin_x = 0.2
 margin_y = 1.0
 numOfTicksOnYAxis = 11
+numOfTicksOnXAxis = 11
 markers = ['s', 'o', 'p', '*', '8']  # ref:http://matplotlib.org/api/markers_api.html
 colors = ['b', 'g', 'r', 'k', 'm']  # ref:http://matplotlib.org/api/colors_api.html
-line_styles = ['-', '--', '-.', ':']  # http://matplotlib.org/api/lines_api.html
+line_styles = ['-', '--', '-.', ':']  # ref:http://matplotlib.org/api/lines_api.html
 
 counter = [0]
 
@@ -22,7 +23,7 @@ def plot(x, y, label="", x_label="x-axis", y_label="y-axis"):
     plt.ylim((min(y) - margin_y), max(y) + margin_y)  # touple of min, max
 
     #  Marking ticks on axes
-    # plt.xticks()
+    # there is a common plot.xticks in main function
     plt.yticks(np.linspace(min(y) - margin_y, max(y) + margin_y, numOfTicksOnYAxis))
 
     plt.plot(x, y,
@@ -44,6 +45,12 @@ def main():
     plot(x_axis, y_axis_cos, "cos(x)")
 
     plt.title("sin(x)/cos(x) Plot", fontsize=20)
+
+    # plt.xticks: if an array of strings is provided as 2nd argument, it links with corresponding entry of 1st array
+    # x_ticks_array = ["0", "pi/2", "pi", "1.5*pi", "2* pi"]
+    # plt.xticks(np.linspace(0, 2*np.pi, len(x_ticks_array)), x_ticks_array),
+    plt.xticks(np.linspace(0, 2*np.pi, numOfTicksOnXAxis))
+
     plt.grid()
     plt.legend()
     plt.show()
