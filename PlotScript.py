@@ -54,5 +54,6 @@ def main():
     plt.grid()
     plt.legend()
     plt.show()
+    plt.close()
 
 main()
