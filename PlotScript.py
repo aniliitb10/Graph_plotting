@@ -6,10 +6,10 @@ margin_x = 0.2
 margin_y = 1.0
 numOfTicksOnYAxis = 11
 numOfTicksOnXAxis = 11
+font_size = 20
 markers = ['s', 'o', 'p', '*', '8']  # ref:http://matplotlib.org/api/markers_api.html
 colors = ['b', 'g', 'r', 'k', 'm']  # ref:http://matplotlib.org/api/colors_api.html
 line_styles = ['-', '--', '-.', ':']  # ref:http://matplotlib.org/api/lines_api.html
-
 counter = [0]
 
 
@@ -33,8 +33,8 @@ def plot(x, y, label="", x_label="x-axis", y_label="y-axis"):
              markersize=8,
              label=label)  # for the legend
 
-    plt.xlabel(x_label, fontsize=20)
-    plt.ylabel(y_label, fontsize=20)
+    plt.xlabel(x_label, fontsize=font_size)
+    plt.ylabel(y_label, fontsize=font_size)
 
 
 def main():
@@ -44,7 +44,7 @@ def main():
     plot(x_axis, y_axis_sin, "sin(x)")
     plot(x_axis, y_axis_cos, "cos(x)")
 
-    plt.title("sin(x)/cos(x) Plot", fontsize=20)
+    plt.title("sin(x)/cos(x) Plot", fontsize=font_size)
 
     # plt.xticks: if an array of strings is provided as 2nd argument, it links with corresponding entry of 1st array
     # x_ticks_array = ["0", "pi/2", "pi", "1.5*pi", "2* pi"]
